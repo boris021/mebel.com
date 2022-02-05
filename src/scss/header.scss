@@ -118,15 +118,17 @@
 	.body-header {
 
 		// .body-header__search
-		&__search {}
+		&__search {
+			flex: 1 1 auto;
+			@include adaptiveValue("margin-left", 75, 20);
+			@include adaptiveValue("margin-right", 102, 20);
+		}
 	}
 
 	.search-header {
 		background-color: #F5F5F5;
 		border-radius: 8px;
 		position: relative;
-		@include adaptiveValue("margin-left", 75, 20);
-
 
 		// .search-header__button
 		&__button {
@@ -143,10 +145,10 @@
 
 		// .search-header__input
 		&__input {
-			width: rem(816);
+			width: 100%;
 			height: rem(58);
 			border-radius: 8px;
-			padding: 0px rem(55) 0px rem(10);
+			padding: 0px rem(55) 0px rem(24);
 			background-color: transparent;
 
 			&::placeholder {
