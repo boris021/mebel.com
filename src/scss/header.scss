@@ -44,6 +44,8 @@
 }
 
 .down-header {
+	background-color: #F5F5F5;
+
 	@media (max-width:$tablet) {
 		display: none;
 	}
@@ -51,7 +53,7 @@
 	&__container {
 		display: flex;
 		align-items: center;
-		background-color: #F5F5F5;
+
 		min-height: rem(40);
 	}
 
@@ -102,7 +104,7 @@
 	// .body-header__container
 	&__container {
 		display: flex;
-
+		align-items: center;
 		background-color: #fff;
 	}
 
@@ -110,10 +112,8 @@
 	&__logo {
 		width: rem(125);
 		height: rem(87);
+		@include adaptiveValue("margin-right", 87, 15);
 	}
-
-	// .body-header__catalog
-	&__catalog {}
 
 	.body-header {
 
@@ -122,6 +122,11 @@
 			flex: 1 1 auto;
 			@include adaptiveValue("margin-left", 75, 20);
 			@include adaptiveValue("margin-right", 102, 20);
+		}
+
+		&__actions {
+			display: flex;
+			align-items: center;
 		}
 	}
 
@@ -158,14 +163,108 @@
 			}
 		}
 	}
+
+	.body-header {
+
+		// .body-header__favorite
+		&__favorite {
+			font-size: rem(32);
+			@include adaptiveValue("margin-right", 70, 15);
+		}
+
+		// .body-header__user
+		&__user {
+			font-size: rem(35);
+		}
+	}
+
+	.actions-header {
+
+		// .actions-header__cart
+		&__cart {
+			@include adaptiveValue("margin-right", 70, 15);
+		}
+	}
+
+	.phones-header {
+		@include adaptiveValue("margin-right", 89, 20);
+
+		// .phones-header__item
+		&__item {
+			position: relative;
+			display: flex;
+		}
+
+		// .phones-header__phone
+		&__phone {
+			font-weight: 600;
+			@include adaptiveValue("font-size", 20, 16);
+			line-height: math.div(27, 20);
+			white-space: nowrap;
+		}
+
+		// .phones-header__arrow
+		&__arrow {
+			font-size: rem(10);
+			margin: 0px 0px 0px rem(7.5);
+			transition: transform 0.3s ease 0s;
+
+			&._spoller-active {
+				transform: rotate(-180deg);
+			}
+		}
+
+		// .phones-header__list
+		&__list {
+			position: absolute;
+			width: 100%;
+			top: 100%;
+			left: 0;
+			margin: rem(5) 0px 0px 0px;
+			background-color: #F5F5F5;
+			padding: rem(15);
+			border-radius: rem(10);
+
+			li {
+				&:not(:last-child) {
+					margin-bottom: em(5, 18);
+				}
+			}
+		}
+	}
+
+	.cart-header {
+		display: flex;
+		column-gap: 15px;
+
+		// .cart-header__icon
+		&__icon {
+			position: relative;
+			flex: 0 0 34px;
+			font-size: rem(35);
+
+			span {
+				position: absolute;
+				width: rem(20);
+				height: rem(20);
+				bottom: 0;
+				left: 0;
+				background-color: $mainGreen;
+				color: #fff;
+				font-size: rem(12);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
 }
 
-//====================================================================================================
-
 //Burger
-/*
-.icon-menu {
-	display: none;
+/* .icon-menu {
+	// display: none;
+
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
@@ -173,6 +272,7 @@
 		height: rem(18);
 		cursor: pointer;
 		z-index: 5;
+
 		span,
 		&::before,
 		&::after {
@@ -184,31 +284,308 @@
 			height: rem(2);
 			background-color: #000;
 		}
+
 		&::before {
 			top: 0;
 		}
+
 		&::after {
 			bottom: 0;
 		}
+
 		span {
 			top: calc(50% - rem(1));
 		}
+
 		.menu-open & {
 			span {
 				width: 0;
 			}
+
 			&::before,
-			&::after {
-			}
+			&::after {}
+
 			&::before {
 				top: calc(50% - rem(1));
 				transform: rotate(-45deg);
 			}
+
 			&::after {
 				bottom: calc(50% - rem(1));
 				transform: rotate(45deg);
 			}
 		}
 	}
+} */
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+.catalog-header {
+	position: relative;
+	background: #F5F5F5;
+	// border: 1px solid #E0E0E0;
+
+	@media (max-width: $mobileSmall) {
+		padding: rem(20) 0;
+	}
 }
-*/
+
+.menu-catalog {
+	@media (max-width: $tablet) {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: #F5F5F5;
+		padding: rem(25) rem(15) rem(50) rem(15);
+		transition: left 0.3s ease 0s;
+
+		.catalog-open & {
+			left: 0;
+			z-index: 6;
+		}
+	}
+
+	// .menu-catalog__list
+	&__list {
+		display: flex;
+		column-gap: 10px;
+		justify-content: space-between;
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			row-gap: rem(25);
+		}
+	}
+
+	// .menu-catalog__link
+	&__link {
+		display: flex;
+		position: relative;
+		transition: color 0.3s ease 0s;
+
+		&[data-parent] {
+			&::before {
+				@extend %ic;
+				@extend ._icon-arrow-down;
+				display: none;
+
+				@media (max-width: $tablet) {
+					transform: translateY(rem(5)) rotate(-90deg);
+					display: block;
+					font-size: rem(10);
+				}
+			}
+
+			@media (max-width: $tablet) {
+				display: flex;
+				width: 100%;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+			}
+		}
+
+		@media (min-width: $tablet) {
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			min-height: rem(70);
+			padding: 0px rem(10);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainGreen;
+
+				&::after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		@media (min-width: $tablet) {
+			&._sub-menu-active {
+				color: $mainGreen;
+
+				&::after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		@media (max-width: $tablet) {
+			@include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+		}
+	}
+
+	// .menu-catalog__sub-menu
+	&__sub-menu {
+		width: 100%;
+		left: 0;
+		top: 100%;
+		background: #F5F5F5;
+		border: 1px solid #E0E0E0;
+	}
+
+	&__back {
+		display: none;
+
+		@media (max-width: $tablet) {
+			display: inline-flex;
+			align-items: center;
+			@include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+
+			&:not(:last-child) {
+				margin-bottom: em(65, 30);
+			}
+
+			&::before {
+				margin: 0px em(13, 30) 0px 0px;
+			}
+		}
+	}
+}
+
+.sub-menu-catalog {
+	@media (max-width: $tablet) {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: $mainColor;
+		padding: rem(25) rem(15) rem(50) rem(15);
+		transition: left 0.3s ease 0s;
+
+		.sub-menu-open & {
+			display: block;
+			left: 0;
+			z-index: 6;
+		}
+	}
+
+	&__back {
+		display: none;
+
+		@media (max-width: $tablet) {
+			display: inline-flex;
+			align-items: center;
+			@include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+
+			&:not(:last-child) {
+				margin-bottom: em(65, 30);
+			}
+
+			&::before {
+				margin: 0px em(13, 30) 0px 0px;
+			}
+		}
+	}
+
+	// .sub-menu-catalog__block
+	&__block {
+		display: none;
+
+		@for $var from 1 to 6 {
+			&_#{$var} {
+				//justify-content: start;
+				grid-template-columns: repeat($var, minmax(auto, rem(320)));
+			}
+		}
+
+		&._sub-menu-open {
+			display: grid;
+
+			@media (max-width: $tablet) {
+				display: block;
+			}
+		}
+	}
+
+	&__container {
+		padding: 0px rem(10);
+	}
+
+	// .sub-menu-catalog__category
+	&__category {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		@media (min-width: $tablet) {
+			font-weight: 700;
+			padding: rem(30) rem(15) rem(30) 0;
+		}
+
+		@media (max-width: $tablet) {
+			&:not(:last-child) {
+				margin-bottom: em(25, 16);
+			}
+		}
+	}
+
+	// .sub-menu-catalog__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: rem(30) rem(15) rem(30) 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	// .sub-menu-catalog__item
+	&__item {}
+
+	// .sub-menu-catalog__link
+	&__link {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// .sub-menu-catalog__link-category
+	&__link-category {
+		@include adaptiveValue("font-size", 30, 20, 992, 320);
+	}
+
+	// .sub-menu-catalog__footer
+	&__footer {
+		padding: rem(30) rem(15) rem(30) 0;
+
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	// .sub-menu-catalog__all
+	&__all {
+		font-size: rem(16);
+		color: $mainGreen;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

@@ -19,16 +19,31 @@
 	<div class="header__body body-header">
 		<div class="body-header__container">
 			<a href="" class="body-header__logo"><img src="@img/logo.svg" alt="logo"></a>
-			<div class="body-header__catalog catalog__body-header">
-				<div class="header__menu menu">
-					<button type="button" class="menu__icon icon-menu"><span></span></button>
-					<nav class="menu__body">
-						<ul class="menu__list">
-							<li class="menu__item"><a href="" class="menu__link"></a></li>
-						</ul>
-					</nav>
+			<nav class="catalog-header__menu menu-catalog">
+				<button type="button" class="menu-catalog__back _icon-back">Назад</button>
+				<ul class="menu-catalog__list">
+					<li class="menu-catalog__item"><button data-parent="1" class="menu-catalog__link">Каталог ножей</button>
+					</li>
+				</ul>
+				<div class="menu-catalog__sub-menu sub-menu-catalog">
+					<button type="button" class="sub-menu-catalog__back _icon-back">Назад</button>
+					<div class="sub-menu-catalog__container">
+						<div hidden data-submenu="1" class="sub-menu-catalog__block">
+							<ul class="sub-menu-catalog__list">
+								<li class="sub-menu-catalog__item"><a href="" class="sub-menu-catalog__link">Разделочные
+										ножи</a></li>
+								<li class="sub-menu-catalog__item"><a href="" class="sub-menu-catalog__link">Туристические
+										ножи</a></li>
+								<li class="sub-menu-catalog__item"><a href="" class="sub-menu-catalog__link">Ножи охотничьи</a>
+								</li>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-			</div>
+			</nav>
+
+
 			<div class="body-header__search">
 				<form action="" class="search-header">
 					<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Искать Товар"
@@ -36,10 +51,25 @@
 					<button type="button" class="search-header__button _icon-search"></button>
 				</form>
 			</div>
-			<a href="" class="body-header__actions"></a>
-			<div class="body-header__icons">
-				<a href="" class="body-header__favorite _icon-heart"><span>1</span></a>
-				<a href="" class="body-header__cart cart__body-header _icon-cart"><span>1</span></a>
+			<div href="" class="body-header__actions actions-header">
+				<div class="actions-header__phones phones-header">
+					<div class="phones-header__items">
+						<div data-spollers class="phones-header__items">
+							<div class="phones-header__item">
+								<a href="tel:+380937172929" class="phones-header__phone">+38093-717-29-29</a>
+								<button type="button" data-spoller class="phones-header__arrow _icon-arrow-down"></button>
+								<ul class="phones-header__list">
+									<li><a href="tel:+380937172929" class="phones-header__phone">+38093-717-29-29</a></li>
+									<li><a href="tel:+380937172929" class="phones-header__phone">+38093-717-29-30</a></li>
+									<li><a href="tel:+380937172929" class="phones-header__phone">+38093-717-29-31</a></li>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="" class="body-header__favorite _icon-heart"></a>
+				<div class="actions-header__cart cart-header">
+					<div class="cart-header__icon _icon-cart"><span>3</span></div>
+				</div>
 				<a href="" class="body-header__user _icon-user"></a>
 			</div>
 		</div>
