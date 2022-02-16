@@ -19,66 +19,70 @@
 	<div class="header__body body-header">
 		<div class="body-header__container">
 			<a href="" class="body-header__logo"><img src="@img/logo.svg" alt="logo"></a>
-			<!-- <nav class="catalog-header__menu menu-catalog">
-				<button type="button" class="menu-catalog__back _icon-back">Назад</button>
-				<ul class="menu-catalog__list">
-					<li class="menu-catalog__item"><button data-parent="1" class="menu-catalog__link">Каталог ножей</button>
+			<nav class="body-header__menu">
+				<ul class="body-header__list">
+					<li><button class="body-header__link _icon-menu">Каталог</button>
+						<span class="menu__arrow arrow"></span>
+						<ul class="body-header__sub-list">
+
+							<li>
+								<button class="body-header__sub-link _icon-menu-1">Диваны и кресла 1</button>
+
+								<ul class="body-header__sub-sub-list">
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-1">Диваны прямые</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-2">Диваны угловые</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-3">Диваны модульные</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-4">Диваны детские</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-5">Диваны прямые</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-6">Диваны угловые</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-7">Диваны модульные</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-8">Диваны детские</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-9">Диваны прямые</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-10">Диваны угловые</a></li>
+									<li><a href="#" class="body-header__sub-sub-link _icon-submenu-11">Диваны модульные</a></li>
+								</ul>
+							</li>
+
+							<!-- <li>
+								<button class="body-header__sub-link _icon-menu-1">Диваны и кресла 2</button>
+								<ul class="body-header__sub-sub-list body-header__sub-sub-list-2">
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-1">2 Диваны прямые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-2">2 Диваны угловые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-3">2 Диваны модульные</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-4">2 Диваны детские</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-5">2 Диваны прямые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-6">2 Диваны угловые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-7">2 Диваны модульные</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-8">2 Диваны детские</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-9">2 Диваны прямые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-10">2 Диваны угловые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-11">2 Диваны модульные</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<button class="body-header__sub-link _icon-menu-1">Диваны и кресла 3</button>
+								<ul class="body-header__sub-sub-list body-header__sub-sub-list-3">
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-1">3 Диваны прямые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-2">3 Диваны угловые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-3">3 Диваны модульные</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-4">3 Диваны детские</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-5">3 Диваны прямые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-6">3 Диваны угловые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-7">3 Диваны модульные</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-8">3 Диваны детские</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-9">3 Диваны прямые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-10">3 Диваны угловые</a></li>
+									<li><a href="" class="body-header__sub-sub-link _icon-submenu-11">3 Диваны модульные</a></li>
+								</ul>
+							</li> -->
+
+						</ul>
 					</li>
 				</ul>
-				<div class="menu-catalog__sub-menu sub-menu-catalog">
-					<button type="button" class="sub-menu-catalog__back _icon-back">Назад</button>
-					<div class="sub-menu-catalog__container">
-						<div hidden data-submenu="1" class="sub-menu-catalog__block">
-							<ul class="sub-menu-catalog__list">
-								<li class="sub-menu-catalog__item"><a href="" class="sub-menu-catalog__link">Разделочные
-										ножи</a></li>
-								<li class="sub-menu-catalog__item"><a href="" class="sub-menu-catalog__link">Туристические
-										ножи</a></li>
-								<li class="sub-menu-catalog__item"><a href="" class="sub-menu-catalog__link">Ножи охотничьи</a>
-								</li>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</nav> -->
+			</nav>
 
-			<div class="mainWrap">
-				<nav>
-					<ul class="menu">
-						<li>
-							<a href="#"><span class="_icon-menu"></span> Каталог</a>
-							<ul class="sub-menu">
-								<li>
-									<a href="#">Уровень 3 меню</a>
-									<ul>
-										<li><a href="#">Подменю 4</a></li>
-										<li><a href="#">Подменю 5</a></li>
-										<li><a href="#">Подменю 6</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Уровень 3 меню</a>
-									<ul>
-										<li><a href="#">Подменю 4</a></li>
-										<li><a href="#">Подменю 5</a></li>
-										<li><a href="#">Подменю 6</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Уровень 3 меню</a>
-									<ul>
-										<li><a href="#">Подменю 4</a></li>
-										<li><a href="#">Подменю 5</a></li>
-										<li><a href="#">Подменю 6</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			<!--end mainWrap-->
+
 
 			<div class="body-header__search">
 				<form action="" class="search-header">
