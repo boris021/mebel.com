@@ -24,6 +24,8 @@
 }
 
 .top-header {
+	position: fixed;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	// .top-header__text
@@ -44,7 +46,9 @@
 }
 
 .down-header {
+	margin-top: rem(46);
 	background-color: #F5F5F5;
+	max-height: rem(40);
 
 	@media (max-width:$tablet) {
 		display: none;
@@ -98,14 +102,18 @@
 	}
 }
 
+
 .body-header {
-	padding: 31px 0;
+	position: fixed;
+	width: 100%;
+	padding: rem(31) 0 rem(31) 0;
+	background-color: #fff;
+
 
 	// .body-header__container
 	&__container {
 		display: flex;
 		align-items: center;
-		background-color: #fff;
 	}
 
 	// .body-header__logo
@@ -321,7 +329,6 @@
 //========================================================================================================================================================
 //========================================================================================================================================================
 .body-header {
-
 	&__menu {}
 
 	&__list {

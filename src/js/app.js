@@ -26,11 +26,11 @@ import * as flsFunctions from "./files/functions.js";
 /* (i) необходимо для корректного отображения webp из css  */
 flsFunctions.isWebp();
 /* Добавление класса touch для HTML если браузер мобильный */
-// flsFunctions.addTouchClass();
+flsFunctions.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
 // flsFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
 // flsFunctions.fullVHfix();
 
@@ -60,7 +60,7 @@ flsFunctions.spollers();
 Документация по работе в шаблоне:
 Сниппет (HTML): pl
 */
-// import './libs/popup.js'
+import './libs/popup.js'
 
 /*
 Модуль параллакса мышью
@@ -150,19 +150,19 @@ import * as flsForms from "./files/forms/forms.js";
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация по работе в шаблоне: js/libs/watcher.js
 // Сниппет(HTML):
-// import './libs/watcher.js'
+import './libs/watcher.js'
 
 // Функции работы скроллом
 import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру при прокрутке
-// flsScroll.headerScroll();
+flsScroll.headerScroll();
 
 // Функционал липкого блока
-// flsScroll.stickyBlock();
+flsScroll.stickyBlock();
 
 // ========================================================================================================================================================================================================================================================
 // Галерея ========================================================================================================================================================================================================================================================
@@ -179,7 +179,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 // ========================================================================================================================================================================================================================================================
 
 /* Динамический адаптив */
-// import "./libs/dynamic_adapt.js";
+import "./libs/dynamic_adapt.js";
 
 /* Форматирование чисел */
 // import './libs/wNumb.min.js';
