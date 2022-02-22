@@ -10,13 +10,13 @@
 		<div class="down-header__container">
 			<div class="down-header__text">kharkivmebel - интернет-магазин качественной мебели</div>
 			<div class="down-header__action">
-				<div class="down-header__city _icon-location">Харьков</div>
-				<a href="mailto:kharkivmebelinfo@gmail.com"
+				<div data-da=".menu__body,991,3" class="down-header__city _icon-location">Харьков</div>
+				<a data-da=".menu__body,991,3" href="mailto:kharkivmebelinfo@gmail.com"
 					class="down-header__email _icon-email">kharkivmebelinfo@gmail.com</a>
 			</div>
 		</div>
 	</div>
-	<div class="header__body body-header">
+	<div data-scroll="1" class="header__body body-header _header-scroll">
 		<div class="body-header__container">
 			<a href="" class="body-header__logo"><img src="@img/logo.svg" alt="logo"></a>
 			<nav class="body-header__menu">
@@ -43,7 +43,7 @@
 								</ul>
 							</li>
 
-							<!-- <li>
+							 <li>
 								<button class="body-header__sub-link _icon-menu-1">Диваны и кресла 2</button>
 								<ul class="body-header__sub-sub-list body-header__sub-sub-list-2">
 									<li><a href="" class="body-header__sub-sub-link _icon-submenu-1">2 Диваны прямые</a></li>
@@ -82,9 +82,8 @@
 				</ul>
 			</nav>
 
-
-
 			<div class="body-header__search">
+				<button type="button" class="search-header__icon _icon-search"></button>
 				<form action="" class="search-header">
 					<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Искать Товар"
 						class="search-header__input">
@@ -96,7 +95,8 @@
 					<div class="phones-header__items">
 						<div data-spollers class="phones-header__items">
 							<div class="phones-header__item">
-								<a href="tel:+380937172929" class="phones-header__phone">+38093-717-29-29</a>
+								<a data-da=".menu__body,991,3" href="tel:+380937172929"
+									class="phones-header__phone">+38093-717-29-29</a>
 								<button type="button" data-spoller class="phones-header__arrow _icon-arrow-down"></button>
 								<ul class="phones-header__list">
 									<li><a href="tel:+380937172929" class="phones-header__phone">+38093-717-29-29</a></li>
@@ -110,9 +110,33 @@
 				<div class="actions-header__cart cart-header">
 					<div class="cart-header__icon _icon-cart"><span>3</span></div>
 				</div>
-				<a href="" class="body-header__user _icon-user"></a>
+				<a href="" class="body-header__user _icon-user">
+					<div class="body-header__user-block">
+						<div class="body-header__user-title">Erik Vadi </div>
+						<a href="mailto:email@gmail.com" class="body-header__user-emal">email@gmail.com</a>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
-	<div class="header__menu menu-header"></div>
+	<div data-da=".actions-header,991,3" class="header__menu-bottom menu-header">
+		<div class="menu-header__container">
+			<div class="header__menu menu">
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item"><a href="" class="menu__link">Харьков мебель</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Про нас</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Мебель под заказ</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Шкафы купе</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Доставка и оплата</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Письмо директору</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Бренды</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Дизайн интерьера</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
 </header>

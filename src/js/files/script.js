@@ -1,12 +1,13 @@
-// Когда пользователь прокручивает вниз 50px от верхней части документа, 
-// измените размер шрифта заголовка
-window.onscroll = function () {
-	scrollFunction()
-};
+window.onload = function () {
+	document.addEventListener("click", documentActions);
 
-function scrollFunction() {
-	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-		document.getElementById("header").style.fontSize = "30px";
-	} else {
-		document.getElementById("header").style.fontSize = "90px";
+	// Actions (делегирование события click)
+	function documentActions(e) {
+		const targetElement = e.target;
+		if (targetElement.classList.contains('search-header__icon')) {
+			document.querySelector('.search-header').classList.toggle('_active');
+		} else if (!targetElement.closest('.search-form') && document.querySelector('.search-form._active')) {
+			document.querySelector('.search-form').classList.remove('_active');
+		}
 	}
+}

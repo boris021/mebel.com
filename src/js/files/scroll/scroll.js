@@ -1,7 +1,12 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, getHash } from "../functions.js";
+import {
+	isMobile,
+	getHash
+} from "../functions.js";
 // Модуль прокрутки к блоку
-import { gotoBlock } from "./gotoblock.js";
+import {
+	gotoBlock
+} from "./gotoblock.js";
 // Переменная контроля добавления события window scroll.
 let addWindowScrollEvent = false;
 //====================================================================================================================================================================================================================================================================================================
@@ -71,7 +76,7 @@ export function pageNavigation() {
 // Работа с шапкой при скроле
 export function headerScroll() {
 	addWindowScrollEvent = true;
-	const header = document.querySelector('header.header');
+	const header = document.querySelector('.header__body');
 	const headerShow = header.hasAttribute('data-scroll-show');
 	const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
 	const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
@@ -125,6 +130,7 @@ export function stickyBlock() {
 			});
 		}
 	}
+
 	function stickyBlockItem(stickyParent, stickyConfig) {
 		const stickyBlockItem = stickyParent.querySelector('[data-sticky-item]');
 		const headerHeight = stickyConfig.header;
@@ -163,6 +169,7 @@ export function stickyBlock() {
 			stickyBlockType(stickyBlockItem, stickyItemValues);
 		}
 	}
+
 	function stickyBlockType(stickyBlockItem, stickyItemValues) {
 		stickyBlockItem.style.cssText = `position:${stickyItemValues.position};bottom:${stickyItemValues.bottom};top:${stickyItemValues.top};left:${stickyItemValues.left};width:${stickyItemValues.width};`;
 	}
