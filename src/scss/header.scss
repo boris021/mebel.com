@@ -1,5 +1,6 @@
 //========================================================================================================================================================
 .header {
+	z-index: 3;
 
 	// .header__top
 	&__top {
@@ -24,7 +25,7 @@
 	// .header__menu
 	&__menu-bottom {
 		background-color: #fff;
-		margin-top: 95px;
+		margin-top: 20px;
 
 		@media (max-width:$tablet) {
 			margin-top: 0;
@@ -79,6 +80,11 @@
 	&__action {
 		display: flex;
 		align-items: center;
+
+		@media (max-width:$tablet) {
+			display: flex;
+			flex-wrap: wrap;
+		}
 	}
 
 	// .down-header__city
@@ -90,9 +96,18 @@
 		@include adaptiveValue("margin-right", 73, 25);
 
 		&::before {
-			font-size: rem(20);
+			font-size: 20px;
 			color: $mainGreen;
 			margin-right: em(11, 20);
+
+			@media (max-width:$tablet) {
+				padding-left: 3px;
+			}
+		}
+
+		@media (max-width:$tablet) {
+			flex: 1 1 100%;
+			margin-bottom: 20px;
 		}
 	}
 
@@ -104,9 +119,13 @@
 		line-height: math.div(18, 13);
 
 		&::before {
-			font-size: rem(20);
+			font-size: 20px;
 			color: $mainGreen;
 			margin-right: em(11, 20);
+
+			@media (max-width:$mobile) {
+				font-size: 19px;
+			}
 		}
 	}
 }
@@ -203,8 +222,8 @@
 		}
 
 		&__icon {
-			font-size: rem(26);
-			left: 35%;
+			font-size: rem(32);
+			left: 28%;
 			color: $mainColor;
 
 			@media (min-width:$mobile) {
@@ -236,22 +255,64 @@
 		&__favorite {
 			font-size: rem(32);
 			@include adaptiveValue("margin-right", 70, 15);
-
-			@media (max-width:$mobile) {
-				display: none;
-			}
 		}
 
 		// .body-header__user
 		&__user {
 			font-size: rem(35);
+			cursor: pointer;
+			display: inline-block;
 
-			@media (max-width:$tablet) {
-				display: none;
+			&._icon-user {
+				@media (max-width:$tablet) {
+					&::before {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: rem(40);
+						height: rem(40);
+						background-color: #E0E0E0;
+						border-radius: 50%;
+						font-size: 20px;
+						margin-right: 13px;
+						color: #383838;
+					}
+				}
 			}
 
+			&-title {
+				font-weight: normal;
+				font-size: 15px;
+				line-height: math.div(20, 15);
+				color: #000000;
+				margin-bottom: 4px;
+			}
+
+			&-emal {
+				font-size: 13px;
+				line-height: math.div(18, 13);
+				color: #BDBDBD;
+			}
+
+
 			&-block {
+				@media (max-width:$tablet) {
+					margin-top: rem(25);
+					border-top: 1px solid #E0E0E0;
+					border-bottom: 1px solid #E0E0E0;
+					padding: rem(20) 0;
+					display: flex;
+					align-items: center;
+				}
+			}
+
+			&-content {
 				display: none;
+
+				@media (max-width:$tablet) {
+					display: block;
+					display: inline-block;
+				}
 			}
 		}
 	}
@@ -280,11 +341,11 @@
 		// .phones-header__phone
 		&__phone {
 			font-weight: 600;
-			@include adaptiveValue("font-size", 20, 0);
+			@include adaptiveValue("font-size", 20, 20);
 			line-height: math.div(27, 20);
 			white-space: nowrap;
 
-			@media (max-width:$mobile) {
+			@media (max-width:$tablet) {
 				font-size: rem(20);
 				display: block;
 				margin: 25px 0;
@@ -348,7 +409,6 @@
 		}
 	}
 }
-
 
 .menu {
 	@media (max-width:$tablet) {
@@ -429,7 +489,6 @@
 		line-height: math.div(20, 17);
 	}
 }
-
 
 //Burger
 .icon-menu {

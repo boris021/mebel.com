@@ -1,1 +1,147 @@
-// Заголовки, общие БЄМ блоки и проче...
+.main {
+	margin-top: 191px;
+
+	@media (max-width:$tablet) {
+		margin-top: 130px;
+	}
+
+	// .main__container
+	&__container {}
+
+	// .main__body
+	&__body {}
+}
+
+.main__body {
+
+	// .имя-блока__slider
+	&__slider {}
+
+	// .имя-блока__wrapper
+	&__wrapper {}
+
+	// .имя-блока__slide
+	&__slide {}
+}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {
+	overflow: hidden;
+
+	// .swiper-slide__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+}
+
+.body-slide {
+	background-color: #F5F5F5;
+	padding-left: 71px;
+	position: relative;
+	height: 630px;
+
+	@media (max-width:$mobile) {
+		padding-left: 5px;
+	}
+
+	// .body-slide__content
+	&__content {
+		flex: 0 1 rem(410);
+
+		@media (max-width:$tablet) {
+			flex: 1 1 100%;
+		}
+	}
+
+	// .body-slide__content-title
+	&__content-title {
+		font-weight: bold;
+		@include adaptiveValue("font-size", 64, 36);
+		line-height: math.div(87, 64);
+		@include adaptiveValue("margin-bottom", 22, 15);
+	}
+
+	// .body-slide__content-subtitle
+	&__content-subtitle {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 24, 16);
+		line-height: math.div(33, 24);
+		padding-right: 15px;
+		@include adaptiveValue("margin-bottom", 32, 35);
+	}
+
+	// .body-slide__content-button
+	&__content-button {
+		border: 1px solid #383838;
+		box-sizing: border-box;
+		border-radius: 8px;
+		padding: 10px 53px;
+	}
+
+	// .body-slide__image
+	&__image {
+		flex: 0 1 auto;
+		width: 660px;
+		max-height: 550px;
+
+		& img {
+			width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__sale {
+		position: absolute;
+		flex: 0 0 100%;
+		bottom: -40px;
+		left: 55%;
+		width: rem(197);
+		height: rem(197);
+		background: #72BF44;
+		border-radius: 50%;
+		text-align: center;
+		overflow: hidden;
+
+		@media (max-width:$tablet) {
+			bottom: -60px;
+		}
+
+		@media (max-width:$mobile) {
+			left: 42%;
+		}
+
+		&-money {
+			position: absolute;
+			width: 100%;
+			top: 20%;
+			left: 0;
+			font-size: 48px;
+			color: #FFFFFF;
+		}
+
+		&-title {
+			position: absolute;
+			width: 100%;
+			top: 45%;
+			left: 0;
+			font-size: 24px;
+			color: #FFFFFF;
+		}
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background-color: #fff;
+	border-radius: 50%;
+	font-size: 8px;
+}
+
+.swiper-button-next {}
