@@ -25,7 +25,7 @@
 	// .header__menu
 	&__menu-bottom {
 		background-color: #fff;
-		margin-top: 20px;
+		margin-top: 10px;
 
 		@media (max-width:$tablet) {
 			margin-top: 0;
@@ -133,7 +133,7 @@
 .body-header {
 	position: fixed;
 	width: 100%;
-	padding: rem(26) 0 rem(26) 0;
+	padding: rem(15) 0 rem(15) 0;
 	background-color: #fff;
 
 	@media (max-width:$tablet) {
@@ -161,8 +161,6 @@
 				height: rem(58);
 			}
 		}
-
-
 	}
 
 	.body-header {
@@ -485,7 +483,7 @@
 	// .menu__link
 	&__link {
 		font-weight: 600;
-		font-size: 17px;
+		font-size: 16px;
 		line-height: math.div(20, 17);
 	}
 }
