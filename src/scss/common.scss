@@ -1,9 +1,13 @@
-.main {
-	margin-top: 191px;
+.hide {
+	height: 50px;
 
 	@media (max-width:$tablet) {
-		margin-top: 130px;
+		display: none;
 	}
+}
+
+.main {
+	margin-top: 130px;
 
 	// .main__container
 	&__container {}
@@ -100,7 +104,7 @@
 	&__sale {
 		position: absolute;
 		flex: 0 0 100%;
-		bottom: -40px;
+		bottom: -60px;
 		left: 55%;
 		width: rem(197);
 		height: rem(197);
