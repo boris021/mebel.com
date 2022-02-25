@@ -380,10 +380,11 @@
 
 .slider-card {
 	position: relative;
-	background: #F5F5F5;
+	background: #F7F7F7;
 	border-radius: 8px;
 	padding: 12px 10px;
 	height: rem(378);
+	margin-bottom: 25px;
 
 	&__block {
 		display: flex;
@@ -400,6 +401,7 @@
 		font-size: 14px;
 		color: #FFFFFF;
 		display: inline-flex;
+		z-index: 2;
 	}
 
 	// .slider-card__action
@@ -408,7 +410,7 @@
 		flex-direction: column;
 		align-items: center;
 		position: relative;
-		z-index: 5;
+		z-index: 2;
 
 		& span {
 			background-color: #fff;
@@ -430,7 +432,6 @@
 				color: $mainGreen;
 				font-size: rem(16);
 				transition: all 0.3s ease 0s;
-
 			}
 
 			&:hover::before {
@@ -451,6 +452,13 @@
 		height: 100%;
 		top: 0;
 		left: 0;
+		text-align: center;
+
+		& img {
+			// object-fit: contain;
+			max-width: 100%;
+			height: 100%;
+		}
 	}
 }
 
@@ -478,19 +486,22 @@
 	// .news__body-block
 	&__body-block {
 		max-width: rem(920);
-		min-width: rem(700);
 		background: #F7F7F7;
 		border-radius: 8px;
 		margin: 0 20px 0 20px;
 		padding: 37px 47px;
 		align-items: center;
 		margin-bottom: rem(40);
-		border: 1px solid red;
 
 		@media (max-width: em(1478)) {
 			max-width: none;
 			min-width: none;
 			width: 100%;
+		}
+
+		@media (max-width:$mobile) {
+			padding: 20px;
+			margin: 0px 10px 20px 10px;
 		}
 	}
 }
@@ -569,5 +580,51 @@
 			width: 100%;
 			height: 100%;
 		}
+	}
+}
+
+// collection ========================================================================================================================================================
+.collection {
+	margin-bottom: 300px;
+
+	// .collection__container
+	&__container {}
+
+	// .collection__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 51, 18);
+	}
+
+	// .collection__body
+	&__body {}
+
+	// .collection__slider
+	&__slider {}
+
+	// .collection__wrapper
+	&__wrapper {}
+
+	// .collection__slide
+	&__slide {}
+}
+
+.swiper-collection {
+	position: relative;
+	overflow: hidden;
+}
+
+.swiper-wrapper {}
+
+.swiper-slide {
+	height: 750px;
+
+	// .swiper-slide__image
+	&__image {
+
+		& img {
+			width: 100%;
+			border-radius: 8px;
+		}
+
 	}
 }

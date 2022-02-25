@@ -155,6 +155,67 @@ function initSliders() {
 			}
 		});
 	}
+	// Проверяем, есть ли слайдер на стронице
+	if (document.querySelector('.swiper-collection')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.swiper-collection', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: false,
+			// autoHeight: false,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+
+			// Брейкпоинты
+			/*breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				1920: {
+					slidesPerView: 1.4,
+					spaceBetween: 20,
+				},
+			}, */
+
+			// События
+			on: {
+
+			}
+		});
+	}
 }
 
 
